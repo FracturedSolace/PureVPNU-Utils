@@ -20,7 +20,13 @@ fi
 if [[ ! -d "${server_list_directory}" ]]
 then
 	echo [ERROR] Directory does not exist: ${server_list_directory} 
-	echo ...did you install the purevpn servers to the correct directory?
+	echo ...	did you install the purevpn servers from https://s3-us-west-1.amazonaws.com/heartbleed/windows/New+OVPN+Files.zip to the correct directory?
+	exit 1
+fi
+
+if [[ ! -f "${login_file_location}" ]]
+then
+	echo [ERROR] No login information saved to "${login_file_location}"
 	exit 1
 fi
 
