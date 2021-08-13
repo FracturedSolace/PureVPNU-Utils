@@ -11,9 +11,17 @@ default_server="de2-ovpn-tcp.ovpn"
 timeout_time=8
 
 #Check for super user privilleges
-if [ "$EUID" != 0 ]
+if [[ "$EUID" != 0 ]]
   then echo "This script must be run as root"
   exit
+fi
+
+#Check that servers directory exists
+if [[ ! -d "${server_list_directory}" ]]
+then
+	echo [ERROR] Directory does not exist: ${server_list_directory} 
+	echo ...did you install the purevpn servers to the correct directory?
+	exit 1
 fi
 
 #Check if the user specified a server to use
