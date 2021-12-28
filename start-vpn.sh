@@ -4,9 +4,9 @@
 #------------
 #This script starts a purevpn server and ensures that the user's IP address has changed
 
-login_file_location="/home/fracturedsolace/purevpn/login.txt"
-server_list_directory="/home/fracturedsolace/purevpn/TCP"
-default_server="de2-ovpn-tcp.ovpn"
+login_file_location="/home/fracturedsolace/protonvpn/login.txt"
+server_list_directory="/home/fracturedsolace/protonvpn/servers/udp"
+default_server="de-13.protonvpn.com.udp.ovpn"
 
 timeout_time=8
 
