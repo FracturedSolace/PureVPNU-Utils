@@ -53,7 +53,7 @@ else
 fi
 	
 #Initiate the VPN on another thread
-openvpn --config "${selected_server}" --auth-user-pass "${login_file_location}" &
+openvpn --config "${selected_server}" --mute-replay-warnings --auth-user-pass "${login_file_location}" &
 
 #Wait for our timeout to give the VPN a chance to set up
 sleep "${timeout_time}"
