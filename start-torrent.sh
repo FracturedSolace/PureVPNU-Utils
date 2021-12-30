@@ -2,7 +2,7 @@
 #------------
 #start-torrent.sh
 #------------
-#This script ensures that the transmission-daemon is running, checks the IP for safety, and then adds a specified torrent
+#This script ensures that the transmission is running, checks the IP for safety, and then adds a specified torrent
 
 #Check that IP is safe (not in the normal region)
 hasipchanged.sh &> /dev/null
@@ -14,12 +14,12 @@ then
 fi
 
 #Check that a transmission daemon is running
-systemctl status transmission-daemon &> /dev/null
+systemctl status transmission &> /dev/null
 
 if [[ $? != 0 ]]
 then
 	echo ["$(tput setaf 1)"ERROR"$(tput setaf 7)"] No transmission daemon is currently running.
-	echo Try \"systemctl start transmission-daemon\"
+	echo Try \"systemctl start transmission\"
 	exit 2
 fi
 
